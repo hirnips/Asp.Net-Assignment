@@ -36,5 +36,10 @@ namespace Assignment1
         {
             Response.Redirect("~/ApplicantEducation.aspx");
         }
+
+        protected void drpApplicant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblAns.Text = "";
+        }
     }
 }

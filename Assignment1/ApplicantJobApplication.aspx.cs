@@ -21,5 +21,37 @@ namespace Assignment1
                 }
             }
         }
+
+        protected void lnbSave_Click(object sender, EventArgs e)
+        {
+            if(drpApplicant.SelectedItem.Text == "==Select Applicant==")
+            {
+                lblAns.Text = "Please select applicant";
+                drpApplicant.Focus();
+                return;
+            }
+            if(drpJob.SelectedItem.Text == "==Select Job==")
+            {
+                lblAns.Text = "Please select job";
+                drpJob.Focus();
+                return;
+            }
+            Response.Redirect("~/ApplicantJobApplication.aspx");
+        }
+
+        protected void lnbCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ApplicantEducation.aspx");
+        }
+
+        protected void drpApplicant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblAns.Text = "";
+        }
+
+        protected void drpJob_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblAns.Text = "";
+        }
     }
 }

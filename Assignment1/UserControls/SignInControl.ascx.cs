@@ -11,7 +11,7 @@ namespace Assignment1.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            txtUName.Focus();
         }
 
         protected void lnbLogin_Click(object sender, EventArgs e)

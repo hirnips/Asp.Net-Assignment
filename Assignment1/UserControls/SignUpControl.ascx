@@ -108,7 +108,6 @@
                 </tr>
                 <tr style="height: 5%">
                     <td colspan="2">
-                        &nbsp;
                         <asp:Label ID="lblAns" runat="server" ForeColor="Red"></asp:Label>
                     </td>
                 </tr>

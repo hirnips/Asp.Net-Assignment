@@ -21,5 +21,37 @@ namespace Assignment1
                 }
             }
         }
+
+        protected void lnbSave_Click(object sender, EventArgs e)
+        {
+            if(drpCompany.SelectedItem.Text == "==Select Company==")
+            {
+                lblAns.Text = "Please select company";
+                drpCompany.Focus();
+                return;
+            }
+            if(drpLanguage.SelectedItem.Text == "==Select Language==")
+            {
+                lblAns.Text = "Please select Language";
+                drpLanguage.Focus();
+                return;
+            }
+            Response.Redirect("~/CompanyHome.aspx");
+        }
+
+        protected void lnbCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CompanyHome.aspx");
+        }
+
+        protected void drpCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblAns.Text = "";
+        }
+
+        protected void drpLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblAns.Text = "";
+        }
     }
 }

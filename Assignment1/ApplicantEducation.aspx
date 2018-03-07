@@ -15,7 +15,7 @@
                             <table style="width: 100%; height: 100%; border: solid 1px navy">
                                 <tr style="height: 20%">
                                     <td colspan="2" style="text-align: left; vertical-align: middle; padding-left: 20px; background-color: navy">
-                                        <asp:Label ID="lblHeader" runat="server" Text="Applicant Education Detail" Font-Bold="true" ForeColor="White" Font-Size="24px"></asp:Label>
+                                        <asp:Label ID="lblHeader" runat="server" Text="Applicant Education" Font-Bold="true" ForeColor="White" Font-Size="24px"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr style="height: 5%">
@@ -27,7 +27,7 @@
                                         <asp:Label ID="lblApplicant" runat="server" Text="Select Applicant: "></asp:Label>
                                     </td>
                                     <td style="text-align: left; vertical-align: middle; padding-left: 5px">
-                                        <asp:DropDownList ID="drpApplicant" runat="server">
+                                        <asp:DropDownList ID="drpApplicant" runat="server" OnSelectedIndexChanged="drpApplicant_SelectedIndexChanged">
                                             <asp:ListItem>==Select Applicant==</asp:ListItem>
                                             <asp:ListItem>Malcom</asp:ListItem>
                                             <asp:ListItem>Adam</asp:ListItem>
@@ -65,6 +65,7 @@
                                         <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/Calander.png" Width="20px" Height="20px" />
                                         <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtStartDate"
                                             PopupButtonID="ImageButton1" Format="dd/MM/yyyy" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtStartDate" ForeColor="Red" Display="Dynamic" ErrorMessage="*" ValidationGroup="appEdu"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="CompareValidator1" ValidationGroup="Date" ForeColor="Red" Display="Dynamic"
                                             runat="server" ControlToValidate="txtStartDate" ControlToCompare="txtCompletionDate"
                                             Operator="LessThan" Type="Date" ErrorMessage="Start date must be less than End date."></asp:CompareValidator>
@@ -79,6 +80,7 @@
                                         <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/images/Calander.png" Width="20px" Height="20px" />
                                         <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txtCompletionDate"
                                             PopupButtonID="ImageButton2" Format="dd/MM/yyyy" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtCompletionDate" ForeColor="Red" Display="Dynamic" ErrorMessage="*" ValidationGroup="appEdu"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr style="height: 10%">
@@ -101,13 +103,14 @@
                                     </td>
                                 </tr>
                                 <tr style="height: 5%">
-                                    <td colspan="2" style="text-align: left; vertical-align: middle; padding-left: 20px">&nbsp;
+                                    <td colspan="2" style="text-align: left; vertical-align: middle; padding-left: 20px">
+                                        <asp:Label ID="lblAns" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     </td>
                                 </tr>
                             </table>
                         </td>
                         <td style="width: 20%">
-                            <asp:Label ID="lblAns" runat="server" Text="" ForeColor="Red"></asp:Label>
+                           &nbsp;
                         </td>
                     </tr>
                 </table>
